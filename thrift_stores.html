@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thrift Stores in Mandaluyong</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+    <!-- Roboto Slab Font -->
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;800;900&display=swap');
+
+        /* =========================
+           COLORS
+        ========================== */
+
+        :root {
+            --violet-dark: #283618;
+            --violet-medium: #3a5a40;
+            --violet-light: #588157;
+            --violet-very-light: #fefae0;
+            --gold-accent: #ffd700;
+        }
+
+
+        /* =========================
+           BODY
+        ========================== */
+
+        body {
+            font-family: 'Roboto Slab', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--violet-very-light);
+            color: #240046;
+        }
+
+
+        /* =========================
+           NAVIGATION BAR
+        ========================== */
+
+        .navbar {
+            background-color: var(--violet-dark);
+            padding: 15px 0;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: rgb(8, 92, 18) !important;
+            font-weight: bold;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-accent) !important;
+        }
+
+
+        /* =========================
+           THRIFT STORE CONTENT
+        ========================== */
+
+        .thrift-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #283618;
+            text-align: center;
+            border-bottom: 2px solid #283618;
+            padding-bottom: 10px;
+        }
+
+        select,
+        button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #283618;
+            border-radius: 4px;
+            background-color: #f5f2f8;
+            color: #240046;
+        }
+
+        button {
+            background-color: #283618;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #606c38;
+        }
+
+        #thrift-info {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border-left: 4px solid #283618;
+            color: #240046;
+        }
+
+        label {
+            font-weight: bold;
+            color: #283618;
+        }
+
+        option {
+            padding: 5px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION BAR
+    ========================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                ReClothe by SPADZ
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="terms_condition.html">
+                            ⚠️Terms and Conditions⚠️
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="recreate.html">
+                            🪡ReCreate With Us🧶
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="thrift_stores.html">
+                            📍THRIFT STORES📍
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <h1>📍Thrift Stores in Mandaluyong📍</h1>
+    
+    <label for="store-select">Select a Store:</label>
+    <select id="store-select">
+        <option value="">-- Select a Store --</option>
+        <option value="1">HMR Trading Haus Pioneer</option>
+        <option value="2">FLEUR DE LIS UKAY-UKAY </option>
+        <option value="3">MRPM Ukay Ukay Store</option>
+        <option value="4">Ukay ukay Kalentong</option>
+        <option value="5">The FashionCafe by #RetailTherapy</option>
+        <option value="6">Thrifty Haven PH</option>
+        <option value="7">Ukay Luxe Heaven</option>
+        <option value="8">Segunda Mana - 500 Shaw</option>
+        <option value="9">Khael›s Garment Store</option>
+        
+    </select>
+    
+    <button id="thrift-info" py-click="show_thrift_info">Show Thrift Store Information</button>
+    
+    <pre id="thrift-info"></pre>
+    <script type="py" src="main.py"></script>
+</body>
+</html>

@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ReCreate by SPADZ | ReClothe</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;800;900&display=swap" rel="stylesheet">
+
+
+    <style>
+
+        :root {
+            --violet-dark: #283618;
+            --violet-medium: #3a5a40;
+            --violet-light: #588157;
+            --violet-very-light: #fefae0;
+            --gold-accent: #ffd700;
+        }
+
+
+        body {
+            background-color: var(--violet-very-light);
+            font-family: 'Roboto Slab', serif;
+            color: #333;
+        }
+
+
+        /* NAVBAR */
+
+        .navbar {
+            background-color: var(--violet-dark);
+            padding: 15px 0;
+        }
+
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+            font-weight: bold;
+        }
+
+
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+
+
+        .nav-link:hover {
+            color: var(--gold-accent) !important;
+        }
+
+
+        /* HERO */
+
+        .hero-section {
+
+            background:
+                linear-gradient(
+                    rgba(10, 46, 14, 0.72),
+                    rgba(1, 35, 6, 0.72)
+                ),
+
+                url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1350&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+
+            padding: 70px 0;
+
+            text-align: center;
+        }
+
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+        }
+
+
+        /* SECTION TITLE */
+
+        .section-title {
+
+            color: var(--violet-dark);
+
+            text-align: center;
+
+            margin: 45px 0 35px;
+
+            font-weight: bold;
+        }
+
+
+        .section-title::after {
+
+            content: "";
+
+            display: block;
+
+            width: 100px;
+
+            height: 3px;
+
+            background-color: var(--gold-accent);
+
+            margin: 15px auto;
+        }
+
+
+        /* BUY / SELL CARDS */
+
+        .choice-card {
+
+            border: none;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow: 0 5px 18px rgba(0,0,0,.12);
+
+            transition: transform .25s, box-shadow .25s;
+
+            height: 100%;
+
+            background: white;
+        }
+
+
+        .choice-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 12px 25px rgba(0,0,0,.16);
+        }
+
+
+        .choice-icon {
+
+            font-size: 4rem;
+
+            padding-top: 28px;
+        }
+
+
+        .choice-body {
+
+            padding: 25px;
+
+            text-align: center;
+        }
+
+
+        .choice-body h3 {
+
+            color: var(--violet-dark);
+
+            font-weight: 900;
+        }
+
+
+        .choice-body p {
+
+            color: #555;
+
+            min-height: 72px;
+        }
+
+
+        .btn-choice {
+
+            background-color: var(--violet-dark);
+
+            color: white;
+
+            font-weight: bold;
+
+            border: none;
+
+            padding: 12px 30px;
+
+            border-radius: 30px;
+        }
+
+
+        .btn-choice:hover {
+
+            background-color: var(--violet-medium);
+
+            color: white;
+        }
+
+
+        /* FORMS */
+
+        .form-section {
+
+            display: none;
+
+            background: white;
+
+            border-radius: 18px;
+
+            box-shadow: 0 5px 18px rgba(0,0,0,.10);
+
+            padding: 30px;
+
+            margin-top: 30px;
+        }
+
+
+        .form-section.active {
+            display: block;
+        }
+
+
+        .form-title {
+
+            color: var(--violet-dark);
+
+            font-weight: 900;
+        }
+
+
+        .form-control,
+        .form-select {
+
+            border: 2px solid #dfe5d7;
+
+            border-radius: 10px;
+
+            padding: 11px;
+        }
+
+
+        .form-control:focus,
+        .form-select:focus {
+
+            border-color: var(--violet-light);
+
+            box-shadow: 0 0 0 .2rem rgba(88,129,87,.15);
+        }
+
+
+        .submit-btn {
+
+            background-color: var(--gold-accent);
+
+            color: var(--violet-dark);
+
+            border: none;
+
+            font-weight: 900;
+
+            padding: 12px 30px;
+
+            border-radius: 30px;
+        }
+
+
+        .submit-btn:hover {
+
+            background-color: #e6c200;
+        }
+
+
+        /* INFORMATION BOX */
+
+        .info-box {
+
+            background-color: #edf2e6;
+
+            border-left: 5px solid var(--violet-light);
+
+            padding: 18px;
+
+            border-radius: 8px;
+
+            margin-top: 20px;
+        }
+
+
+        /* FOOTER */
+
+        .footer {
+
+            background-color: var(--violet-dark);
+
+            color: white;
+
+            padding: 30px 0;
+
+            margin-top: 60px;
+
+            text-align: center;
+        }
+
+
+        .footer-title {
+
+            font-size: 1.5rem;
+
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION BAR -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                ReClothe by SPADZ
+            </a>
+
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="terms_condition.html">
+                            ⚠️Terms and Conditions⚠️
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="recreate.html">
+                            🪡ReCreate With Us🧶
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="thrift_stores.html">
+                            📍THRIFT STORES📍
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero-section">
+
+        <div class="container">
+
+            <h1 class="hero-title">
+                ReCreate
+            </h1>
+
+            <p class="hero-subtitle">
+                Give clothes a second life with ReClothe by SPADZ.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MAIN SECTION -->
+
+    <main class="container">
+
+
+        <h2 class="section-title">
+            What Would You Like To Do?
+        </h2>
+
+
+
+        <div class="row g-4 justify-content-center">
+
+
+            <!-- SELL CLOTHES -->
+
+            <div class="col-md-5">
+
+                <div class="choice-card">
+
+                    <div class="choice-icon text-center">
+                        👕
+                    </div>
+
+
+                    <div class="choice-body">
+
+                        <h3>
+                            Sell Clothes
+                        </h3>
+
+
+                        <p>
+                            Have clothes you no longer use?
+                            Submit your clothing details and
+                            let us help give your pieces a new life.
+                        </p>
+
+
+                        <button
+                            class="btn btn-choice"
+                            onclick="showForm('sell')">
+
+                            🧵 Sell My Clothes
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BUY CLOTHES -->
+
+            <div class="col-md-5">
+
+                <div class="choice-card">
+
+                    <div class="choice-icon text-center">
+                        🛍️
+                    </div>
+
+
+                    <div class="choice-body">
+
+                        <h3>
+                            Buy Clothes
+                        </h3>
+
+
+                        <p>
+                            Looking for unique, sustainable pieces?
+                            Tell us what you are looking for and
+                            explore available ReClothe items.
+                        </p>
+
+
+                        <button
+                            class="btn btn-choice"
+                            onclick="showForm('buy')">
+
+                            🛒 Buy Clothes
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- SELL FORM -->
+
+        <section id="sellForm" class="form-section">
+
+
+            <h3 class="form-title">
+                🧵 Sell Your Clothes
+            </h3>
+
+
+            <p>
+                Fill out the form below so we can learn
+                about the clothing you want to sell.
+            </p>
+
+
+
+            <form id="sellingForm">
+
+
+                <div class="row g-3">
+
+
+                    <div class="col-md-6">
+
+                        <label class="form-label fw-bold">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="col-md-6">
+
+                        <label class="form-label fw-bold">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="col-md-6">
+
+                        <label class="form-label fw-bold">
+                            Clothing Type
+                        </label>
+
+
+                        <select
+                            name="clothing_type"
+                            class="form-select"
+                            required>
+
+                            <option value="">
+                                Choose one...
+                            </option>
+
+                            <option>T-Shirt</option>
+
+                            <option>Shirt</option>
+
+                            <option>Pants</option>
+
+                            <option>Jeans</option>
+
+                            <option>Jacket</option>
+
+                            <option>Dress</option>
+
+                            <option>Skirt</option>
+
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="col-md-6">
+
+                        <label class="form-label fw-bold">
+                            Condition
+                        </label>
+
+
+                        <select
+                            name="condition"
+                            class="form-select"
+                            required>
+
+                            <option value="">
+                                Choose one...
+                            </option>
+
+                            <option>Like New</option>
+
+                            <option>Good</option>
+
+                            <option>Fair</option>
+
+                            <option>Needs Repair</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="col-12">
+
+                        <label class="form-label fw-bold">
+                            Description
+                        </label>
+
+
+                        <textarea
+                            name="description"
+                            class="form-control"
+                            rows="4"
+                            placeholder="Describe the brand, size, color, and any flaws..."
+                            required></textarea>
+
+                    </div>
+
+
+
+                    <div class="col-12">
+
+                        <label class="form-label fw-bold">
+                            Expected Price (₱)
+                        </label>
+
+
+                        <input
+                            type="number"
+                            name="price"
+                            class="form-control"
+                            min="0"
+                            step="0.01"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="col-12">
+
+
+                        <button
+                            type="submit"
+                            class="btn submit-btn">
+
+                            Submit Clothing
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-outline-secondary rounded-pill px-4 ms-2"
+                            onclick="hideForms()">
+
+                            Cancel
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+            </form>
+
+
+
+            <div class="info-box">
+
+                <strong>
+                    How selling works:
+                </strong>
+
+
+                <ol class="mb-0 mt-2">
+
+                    <li>
+                        Submit your clothing information.
+                    </li>
+
+                    <li>
+                        ReClothe reviews the item.
+                    </li>
+
+                    <li>
+                        We contact you about the next steps and possible price.
+                    </li>
+
+                </ol>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- BUY FORM -->
+
+        <section id="buyForm" class="form-section">
+
+
+            <h3 class="form-title">
+                🛍️ Find Clothes
+            </h3>
+
+
+            <p>
+                Tell us what kind of clothing you want to find.
+            </p>
+
+
+
+            <form id="buyingForm">
+
+
+                <div class="row g-3">
+
+
+                    <div class="col-md-6">
+
+                        <label class="form-label fw-bold">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="col-md-6">
+
+                        <label class="form-label fw-bold">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            class="form-control"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="col-md-6">
+
+                        <label class="form-label fw-bold">
+                            Clothing Type
+                        </label>
+
+
+                        <select
+                            name="clothing_type"
+                            class="form-select"
+                            required>
+
+                            <option value="">
+                                Choose one...
+                            </option>
+
+                            <option>T-Shirt</option>
+
+                            <option>Shirt</option>
+
+                            <option>Pants</option>
+
+                            <option>Jeans</option>
+
+                            <option>Jacket</option>
+
+                            <option>Dress</option>
+
+                            <option>Skirt</option>
+
+                            <option>Any</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="col-md-6">
+
+                        <label class="form-label fw-bold">
+                            Size
+                        </label>
+
+
+                        <select
+                            name="size"
+                            class="form-select"
+                            required>
+
+                            <option value="">
+                                Choose one...
+                            </option>
+
+                            <option>XS</option>
+
+                            <option>S</option>
+
+                            <option>M</option>
+
+                            <option>L</option>
+
+                            <option>XL</option>
+
+                            <option>XXL</option>
+
+                            <option>Any</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="col-md-6">
+
+                        <label class="form-label fw-bold">
+                            Maximum Budget (₱)
+                        </label>
+
+
+                        <input
+                            type="number"
+                            name="budget"
+                            class="form-control"
+                            min="0"
+                            step="0.01"
+                            required>
+
+                    </div>
+
+
+
+                    <div class="col-md-6">
+
+                        <label class="form-label fw-bold">
+                            Preferred Condition
+                        </label>
+
+
+                        <select
+                            name="condition"
+                            class="form-select"
+                            required>
+
+                            <option>Any</option>
+
+                            <option>Like New</option>
+
+                            <option>Good</option>
+
+                            <option>Fair</option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="col-12">
+
+                        <label class="form-label fw-bold">
+                            What are you looking for?
+                        </label>
+
+
+                        <textarea
+                            name="description"
+                            class="form-control"
+                            rows="4"
+                            placeholder="Describe your preferred style, color, brand, etc."></textarea>
+
+                    </div>
+
+
+
+                    <div class="col-12">
+
+
+                        <button
+                            type="submit"
+                            class="btn submit-btn">
+
+                            Find Clothes
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-outline-secondary rounded-pill px-4 ms-2"
+                            onclick="hideForms()">
+
+                            Cancel
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+            </form>
+
+
+        </section>
+
+
+
+        <!-- SUCCESS MESSAGE -->
+
+        <div
+            id="message"
+            class="alert alert-success mt-4 d-none"
+            role="alert">
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-title">
+                ReClothe by SPADZ
+            </div>
+
+            <p>
+                Preservation • Distinction • Knowledge
+            </p>
+
+            <p>
+                Since 2026
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+
+        /* SHOW SELL OR BUY FORM */
+
+        function showForm(type) {
+
+
+            document
+                .getElementById("sellForm")
+                .classList.remove("active");
+
+
+            document
+                .getElementById("buyForm")
+                .classList.remove("active");
+
+
+            document
+                .getElementById("message")
+                .classList.add("d-none");
+
+
+            if (type === "sell") {
+
+
+                document
+                    .getElementById("sellForm")
+                    .classList.add("active");
+
+
+                document
+                    .getElementById("sellForm")
+                    .scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+
+            }
+
+
+            else {
+
+
+                document
+                    .getElementById("buyForm")
+                    .classList.add("active");
+
+
+                document
+                    .getElementById("buyForm")
+                    .scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+            }
+
+        }
+
+
+
+        /* HIDE FORMS */
+
+        function hideForms() {
+
+
+            document
+                .getElementById("sellForm")
+                .classList.remove("active");
+
+
+            document
+                .getElementById("buyForm")
+                .classList.remove("active");
+
+
+            document
+                .getElementById("message")
+                .classList.add("d-none");
+
+        }
+
+
+
+        /* SELLING FORM */
+
+        document
+            .getElementById("sellingForm")
+            .addEventListener("submit", function(event) {
+
+
+                event.preventDefault();
+
+
+                const form = this;
+
+
+                const name =
+                    form.querySelector('[name="name"]').value;
+
+
+                const email =
+                    form.querySelector('[name="email"]').value;
+
+
+                const clothing =
+                    form.querySelector('[name="clothing_type"]').value;
+
+
+                const condition =
+                    form.querySelector('[name="condition"]').value;
+
+
+                const description =
+                    form.querySelector('[name="description"]').value;
+
+
+                const price =
+                    form.querySelector('[name="price"]').value;
+
+
+
+                /* SAVE INFORMATION */
+
+                const sellingData = {
+
+                    name: name,
+
+                    email: email,
+
+                    clothing: clothing,
+
+                    condition: condition,
+
+                    description: description,
+
+                    price: price,
+
+                    date: new Date().toLocaleString()
+
+                };
+
+
+                localStorage.setItem(
+                    "reclothe_selling_request",
+                    JSON.stringify(sellingData)
+                );
+
+
+
+                /* SUCCESS MESSAGE */
+
+                const message =
+                    document.getElementById("message");
+
+
+                message.className =
+                    "alert alert-success mt-4";
+
+
+                message.innerHTML = `
+
+                    <strong>
+                        Thank you, ${name}!
+                    </strong>
+
+                    <br>
+
+                    Your clothing submission has been received by ReClothe.
+
+                    <br>
+
+                    We will review your
+                    <strong>${clothing}</strong>
+                    and contact you through
+                    <strong>${email}</strong>.
+
+                `;
+
+
+                message.classList.remove("d-none");
+
+
+                /* CLEAR FORM */
+
+                form.reset();
+
+
+                /* SCROLL TO MESSAGE */
+
+                message.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+
+            });
+
+
+
+        /* BUYING FORM */
+
+        document
+            .getElementById("buyingForm")
+            .addEventListener("submit", function(event) {
+
+
+                event.preventDefault();
+
+
+                const form = this;
+
+
+                const name =
+                    form.querySelector('[name="name"]').value;
+
+
+                const email =
+                    form.querySelector('[name="email"]').value;
+
+
+                const clothing =
+                    form.querySelector('[name="clothing_type"]').value;
+
+
+                const size =
+                    form.querySelector('[name="size"]').value;
+
+
+                const budget =
+                    form.querySelector('[name="budget"]').value;
+
+
+                const condition =
+                    form.querySelector('[name="condition"]').value;
+
+
+                const description =
+                    form.querySelector('[name="description"]').value;
+
+
+
+                /* SAVE INFORMATION */
+
+                const buyingData = {
+
+                    name: name,
+
+                    email: email,
+
+                    clothing: clothing,
+
+                    size: size,
+
+                    budget: budget,
+
+                    condition: condition,
+
+                    description: description,
+
+                    date: new Date().toLocaleString()
+
+                };
+
+
+                localStorage.setItem(
+                    "reclothe_buying_request",
+                    JSON.stringify(buyingData)
+                );
+
+
+
+                /* SUCCESS MESSAGE */
+
+                const message =
+                    document.getElementById("message");
+
+
+                message.className =
+                    "alert alert-success mt-4";
+
+
+                message.innerHTML = `
+
+                    <strong>
+                        Thank you, ${name}!
+                    </strong>
+
+                    <br>
+
+                    Your clothing request has been received.
+
+                    <br>
+
+                    We will look for a
+                    <strong>${size} ${clothing}</strong>
+                    within your
+                    <strong>₱${budget}</strong>
+                    budget.
+
+                    <br>
+
+                    We will contact you through
+                    <strong>${email}</strong>.
+
+                `;
+
+
+                message.classList.remove("d-none");
+
+
+                /* CLEAR FORM */
+
+                form.reset();
+
+
+                /* SCROLL TO MESSAGE */
+
+                message.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+
+            });
+
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

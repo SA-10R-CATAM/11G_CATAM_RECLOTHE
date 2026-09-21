@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ReClothe by SPADZ</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;800;900&display=swap');
+
+        :root {
+            --violet-dark: #283618;
+            --violet-medium: #3a5a40;
+            --violet-light: #588157;
+            --violet-very-light: #fefae0;
+            --gold-accent: #ffd700;
+        }
+
+        body {
+            background-color: var(--violet-very-light);
+            font-family: 'Roboto Slab', serif;
+        }
+
+        .navbar {
+            background-color: var(--violet-dark);
+            padding: 15px 0;
+        }
+
+        .navbar-brand, .nav-link {
+            color: rgb(8, 92, 18) !important;
+            font-weight: bold;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-accent) !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(10, 46, 14, 0.7), rgba(1, 35, 6, 0.7)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-hero {
+            background-color: var(--gold-accent);
+            color: var(--violet-dark);
+            font-weight: bold;
+            padding: 10px 30px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1.1rem;
+        }
+
+        .btn-hero:hover {
+            background-color: #e6c200;
+            color: var(--violet-dark);
+        }
+
+        .section-title {
+            color: var(--violet-dark);
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--gold-accent);
+            margin: 15px auto;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            color: var(--violet-dark);
+            font-weight: bold;
+        }
+
+        .card-text {
+            color: #555;
+        }
+
+        /* BIGGER ABOUT US TEXT */
+        #about p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+        }
+
+        .btn-card {
+            background-color: var(--violet-dark);
+            color: white;
+            font-weight: bold;
+            border: none;
+        }
+
+        .btn-card:hover {
+            background-color: var(--violet-medium);
+            color: white;
+        }
+
+        .footer {
+            background-color: var(--violet-dark);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            color: var(--gold-accent);
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">ReClothe by SPADZ</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="terms_condition.html">⚠️Terms and Conditions⚠️</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="recreate.html">🪡ReCreate With Us🧶</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="thrift_stores.html">📍THRIFT STORES📍</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+
+    <section class="hero-section">
+
+        <div class="container">
+
+            <h1 class="hero-title">ReClothe</h1>
+
+            <p class="hero-subtitle">Since 2026</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+
+    <section class="container" id="about">
+
+        <h2 class="section-title">About Us</h2>
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <p>
+                    ReClothe is a business built by 5 young entrepreneurs who wanted to integrate what they, as a generation, experienced and what past generations have been striving for; an eco-friendly way to upcycle clothing. It was inspired by these youthful minds wanting a sustainable future, while tending to people's convenience. We purchase vintage apparel from customers and refurbish them into quality unique to the previous pieces of clothing.
+                </p>
+
+                <p>
+                    We offer services that help rid customers of wasted space, assist them in supporting local businesses, and aid them in identifying and recognising how climate change is a real problem. We keep the values of preservation, distinction, and knowledge, aiming to uphold those traits in what we do as a business.
+                </p>
+
+                <a href="#" class="btn btn-card">Read More</a>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <img src="us.png"
+                     alt="us"
+                     class="img-fluid rounded">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Programs Section -->
+
+    <section class="container mt-5">
+
+        <h2 class="section-title">Guide to our Website</h2>
+
+        <div class="row">
+
+
+            <!-- RECREATE PANEL -->
+
+            <div class="col-md-4">
+
+                <div class="card">
+
+                    <img src="recreate with us.png"
+                         class="card-img-top"
+                         alt="ReCreate with Us">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">ReCreate with Us</h5>
+
+                        <p class="card-text"></p>
+
+                        <a href="recreate.html" class="btn btn-card">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- THRIFT STORES PANEL -->
+
+            <div class="col-md-4">
+
+                <div class="card">
+
+                    <img src="thrift.png"
+                         class="card-img-top"
+                         alt="Local Thrift Stores">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">Local Thrift Stores</h5>
+
+                        <p class="card-text"></p>
+
+                        <a href="thrift_stores.html" class="btn btn-card">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TERMS AND CONDITIONS PANEL -->
+
+            <div class="col-md-4">
+
+                <div class="card">
+
+                    <img src="impact.png"
+                         class="card-img-top"
+                         alt="Terms and Conditions">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">TERMS AND CONDITIONS</h5>
+
+                        <p class="card-text"></p>
+
+                        <a href="terms_condition.html" class="btn btn-card">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <h3 class="footer-title">ReClothe</h3>
+
+                    <p>
+                        343, 1556 Ortigas Ave, Mandaluyong City, Metro Manila<br>
+                    
+                        Phone: (02) 8721 2000
+
+                    </p>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <h3 class="footer-title">Connect With Us</h3>
+
+                    <ul class="list-unstyled">
+
+                        <li>
+                            <a href="#" class="footer-link">Facebook</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer-link">Twitter</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer-link">Instagram</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer-link">YouTube</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="text-center mt-4">
+
+                <p>&copy; 2026 ReClothe by SPADZ. All rights reserved.</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JS Bundle with Popper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

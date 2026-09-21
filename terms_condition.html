@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Terms and Conditions | ReClothe by SPADZ</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+
+    <script type="module"
+        src="https://pyscript.net/releases/2024.1.1/core.js">
+    </script>
+
+
+    <style>
+
+        /* ============================= */
+        /* FONT */
+        /* ============================= */
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;800;900&display=swap');
+
+
+        /* ============================= */
+        /* COLORS */
+        /* ============================= */
+
+        :root {
+
+            --violet-dark: #283618;
+            --violet-medium: #3a5a40;
+            --violet-light: #588157;
+            --violet-very-light: #fefae0;
+            --gold-accent: #ffd700;
+
+        }
+
+
+        /* ============================= */
+        /* BODY */
+        /* ============================= */
+
+        body {
+
+            background-color: var(--violet-very-light);
+
+            font-family: 'Roboto Slab', serif;
+
+            margin: 0;
+
+        }
+
+
+        /* ============================= */
+        /* NAVBAR */
+        /* ============================= */
+
+        .navbar {
+
+            background-color: var(--violet-dark);
+
+            padding: 15px 0;
+
+        }
+
+
+        .navbar-brand,
+        .nav-link {
+
+            color: white !important;
+
+            font-weight: bold;
+
+        }
+
+
+        .navbar-brand {
+
+            font-size: 1.5rem;
+
+        }
+
+
+        .nav-link:hover {
+
+            color: var(--gold-accent) !important;
+
+        }
+
+
+        /* ============================= */
+        /* TERMS SECTION */
+        /* ============================= */
+
+        .terms-section {
+
+            padding: 60px 0;
+
+            min-height: 75vh;
+
+        }
+
+
+        .section-title {
+
+            color: var(--violet-dark);
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+            font-weight: bold;
+
+            position: relative;
+
+        }
+
+
+        .section-title:after {
+
+            content: "";
+
+            display: block;
+
+            width: 100px;
+
+            height: 3px;
+
+            background-color: var(--gold-accent);
+
+            margin: 15px auto;
+
+        }
+
+
+        /* ============================= */
+        /* TERMS CARD */
+        /* ============================= */
+
+        .terms-card {
+
+            background-color: white;
+
+            border: none;
+
+            border-radius: 10px;
+
+            padding: 40px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+        }
+
+
+        .terms-card h3 {
+
+            color: var(--violet-dark);
+
+            font-weight: bold;
+
+            margin-top: 25px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .terms-card p {
+
+            color: #555;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* ============================= */
+        /* ACCEPT AREA */
+        /* ============================= */
+
+        .accept-area {
+
+            text-align: center;
+
+            margin-top: 40px;
+
+            padding-top: 30px;
+
+            border-top: 2px solid #eee;
+
+        }
+
+
+        /* ============================= */
+        /* CHECKBOX */
+        /* ============================= */
+
+        .form-check {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .form-check-input {
+
+            width: 20px;
+
+            height: 20px;
+
+            cursor: pointer;
+
+            border: 2px solid var(--violet-dark);
+
+        }
+
+
+        .form-check-input:checked {
+
+            background-color: var(--violet-dark);
+
+            border-color: var(--violet-dark);
+
+        }
+
+
+        .form-check-label {
+
+            color: #555;
+
+            cursor: pointer;
+
+            margin-left: 8px;
+
+        }
+
+
+        /* ============================= */
+        /* ACCEPT BUTTON */
+        /* ============================= */
+
+        .accept-btn {
+
+            background-color: var(--violet-dark);
+
+            color: white;
+
+            font-weight: bold;
+
+            border: none;
+
+            padding: 12px 30px;
+
+            border-radius: 30px;
+
+            font-size: 1.1rem;
+
+            transition: 0.3s;
+
+        }
+
+
+        .accept-btn:hover {
+
+            background-color: var(--violet-medium);
+
+            color: white;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* ============================= */
+        /* DISABLED BUTTON */
+        /* ============================= */
+
+        .accept-btn:disabled {
+
+            background-color: #aaa;
+
+            color: white;
+
+            cursor: not-allowed;
+
+            opacity: 0.7;
+
+            transform: none;
+
+        }
+
+
+        /* ============================= */
+        /* WARNING MESSAGE */
+        /* ============================= */
+
+        #warningMessage {
+
+            color: #a33;
+
+            margin-top: 15px;
+
+            display: none;
+
+        }
+
+
+        /* ============================= */
+        /* FOOTER */
+        /* ============================= */
+
+        .footer {
+
+            background-color: var(--violet-dark);
+
+            color: white;
+
+            padding: 30px 0;
+
+            margin-top: 50px;
+
+        }
+
+
+        .footer-title {
+
+            font-size: 1.5rem;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .footer-link {
+
+            color: var(--gold-accent);
+
+            text-decoration: none;
+
+        }
+
+
+        .footer-link:hover {
+
+            color: white;
+
+            text-decoration: underline;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================= -->
+    <!-- NAVIGATION BAR -->
+    <!-- ================================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container">
+
+
+            <a class="navbar-brand" href="index.html">
+
+                ReClothe by SPADZ
+
+            </a>
+
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="index.html">
+
+                            Home
+
+                        </a>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active"
+                           href="terms_condition.html">
+
+                            ⚠️ Terms and Conditions ⚠️
+
+                        </a>
+
+                    </li>
+                </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="recreate.html">
+
+                            🪡 ReCreate With Us 🧶
+
+                        </a>
+
+                    </li>
+
+
+                    
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="thrift_stores.html">
+
+                            📍 THRIFT STORES 📍
+
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================================= -->
+    <!-- TERMS AND CONDITIONS -->
+    <!-- ================================= -->
+
+    <section class="terms-section">
+
+        <div class="container">
+
+
+            <h2 class="section-title">
+
+                Terms and Conditions
+
+            </h2>
+
+
+            <div class="terms-card">
+
+
+                <p>
+
+                    Welcome to <strong>ReClothe by SPADZ</strong>.
+
+                    By using our website and services, you agree to
+                    follow the terms and conditions stated below.
+
+                </p>
+
+
+
+                <h3>
+
+                    1. Clothing Submission
+
+                </h3>
+
+
+                <p>
+
+                    Customers may submit clothing items for our
+                    upcycling services. Items should be clean and
+                    free from hazardous materials. ReClothe reserves
+                    the right to refuse items that are unsuitable
+                    for the service.
+
+                </p>
+
+
+
+                <h3>
+
+                    2. Clothing Condition
+
+                </h3>
+
+
+                <p>
+
+                    ReClothe will inspect submitted clothing before
+                    accepting it. Because we work with pre-owned
+                    clothing, the final product may contain minor
+                    differences in color, texture, size, or appearance.
+
+                </p>
+
+
+
+                <h3>
+
+                    3. Upcycling and Redesign
+
+                </h3>
+
+
+                <p>
+
+                    By submitting clothing, the customer agrees that
+                    the clothing may be altered, redesigned, cut,
+                    sewn, or otherwise modified as part of the
+                    upcycling process.
+
+                </p>
+
+
+
+                <h3>
+
+                    4. Customer Responsibility
+
+                </h3>
+
+
+                <p>
+
+                    Customers are responsible for providing accurate
+                    information about their clothing and following
+                    the instructions provided by ReClothe.
+
+                </p>
+
+
+
+                <h3>
+
+                    5. Sustainability
+
+                </h3>
+
+
+                <p>
+
+                    ReClothe aims to promote sustainable fashion by
+                    extending the life of clothing and encouraging
+                    responsible consumption.
+
+                </p>
+
+
+
+                <h3>
+
+                    6. Agreement
+
+                </h3>
+
+
+                <p>
+
+                    By checking the box and clicking the
+                    <strong>Accept Terms and Conditions</strong>
+                    button below, you confirm that you have read,
+                    understood, and agreed to these Terms and Conditions.
+
+                </p>
+
+
+
+                <!-- ================================= -->
+                <!-- CHECKBOX + ACCEPT BUTTON -->
+                <!-- ================================= -->
+
+                <div class="accept-area">
+
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="agreeCheckbox"
+                            py-change="check_agreement"
+                        >
+
+
+                        <label
+                            class="form-check-label"
+                            for="agreeCheckbox">
+
+                            I have read and agree to the Terms and Conditions.
+
+                        </label>
+
+                    </div>
+
+
+
+                    <button
+                        id="acceptButton"
+                        class="accept-btn"
+                        py-click="accept_terms"
+                        disabled>
+
+                        ✓ Accept Terms and Conditions
+
+                    </button>
+
+
+
+                    <p id="warningMessage">
+
+                        Please check the box before accepting the Terms and Conditions.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================= -->
+    <!-- FOOTER -->
+    <!-- ================================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+
+            <div class="row">
+
+
+                <div class="col-md-6">
+
+                    <h3 class="footer-title">
+
+                        ReClothe
+
+                    </h3>
+
+
+                    <p>
+
+                        123 Noa Street<br>
+
+                        Wonnie City, LC 676767<br>
+
+                        Phone: (123) 456-7890
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="col-md-6">
+
+                    <h3 class="footer-title">
+
+                        Connect With Us
+
+                    </h3>
+
+
+                    <ul class="list-unstyled">
+
+
+                        <li>
+
+                            <a href="#" class="footer-link">
+
+                                Facebook
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="#" class="footer-link">
+
+                                Twitter
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="#" class="footer-link">
+
+                                Instagram
+
+                            </a>
+
+                        </li>
+
+
+                        <li>
+
+                            <a href="#" class="footer-link">
+
+                                YouTube
+
+                            </a>
+
+                        </li>
+
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="text-center mt-4">
+
+                <p>
+
+                    &copy; 2026 ReClothe by SPADZ.
+                    All rights reserved.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================================= -->
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <!-- ================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- ================================= -->
+    <!-- PYSCRIPT -->
+    <!-- ================================= -->
+
+    <script type="py" src="./main2.py"></script>
+
+
+</body>
+
+</html>
